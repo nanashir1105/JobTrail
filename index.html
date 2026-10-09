@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobTrail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <h1>JobTrail</h1>
+    <nav id="nav" aria-label="Views">
+      <button data-view="board" class="on">Board</button>
+      <button data-view="list">List</button>
+      <button data-view="cal">Calendar</button>
+      <button data-view="insights">Insights</button>
+    </nav>
+    <dl class="mini">
+      <div><dt>Active</dt><dd id="sActive">0</dd></div>
+      <div><dt>Interviews</dt><dd id="sIv">0</dd></div>
+      <div><dt>Overdue</dt><dd id="sOd">0</dd></div>
+    </dl>
+    <div class="tools">
+      <button id="sample">Load sample data</button>
+      <button id="export">Export backup</button>
+      <button id="import">Import backup</button>
+      <button id="clear" class="danger">Clear all</button>
+    </div>
+  </aside>
+  <main>
+    <header class="bar">
+      <input type="search" id="q" placeholder="Search company, role, location or notes" aria-label="Search">
+      <button id="add" class="primary">New application</button>
+    </header>
+    <section id="view" aria-live="polite"></section>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form id="f">
+    <h2 id="dTitle">New application</h2>
+    <div class="grid">
+      <label>Company <input name="company" required maxlength="60"></label>
+      <label>Role <input name="role" required maxlength="80"></label>
+      <label>Location <input name="location" maxlength="60" placeholder="City or Remote"></label>
+      <label>Salary <input name="salary" maxlength="30" placeholder="e.g. 6,000 per month"></label>
+      <label>Stage <select name="stage"></select></label>
+      <label>Job link <input name="link" type="url" placeholder="https://"></label>
+      <label>Date applied <input name="applied" type="date"></label>
+      <label>Interview date <input name="interview" type="date"></label>
+      <label>Follow-up date <input name="followup" type="date"></label>
+    </div>
+    <label>Notes <textarea name="notes" rows="3" maxlength="500" placeholder="Contacts, questions to ask, next steps"></textarea></label>
+    <div id="hist" class="hist"></div>
+    <div class="actions">
+      <button type="button" id="del" class="danger">Delete</button>
+      <span class="sp"></span>
+      <button type="button" id="cancel">Cancel</button>
+      <button type="submit" class="primary">Save</button>
+    </div>
+  </form>
+</dialog>
+<input type="file" id="file" accept="application/json" hidden>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
