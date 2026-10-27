@@ -1,5 +1,9 @@
 # JobTrail
 
+**Live demo:** [https://nanashir1105.github.io/JobTrail/](https://nanashir1105.github.io/JobTrail/)
+
+Open the demo and click **Load sample data** in the sidebar to explore the board, calendar and insights.
+
 A job application tracker built with vanilla HTML, CSS and JavaScript. No framework, no backend, no database: data is stored in the browser with `localStorage`, with JSON export and import for backups.
 
 ## Features
@@ -18,6 +22,9 @@ A job application tracker built with vanilla HTML, CSS and JavaScript. No framew
 - Search across company, role, location and notes
 - JSON backup export and import with validation
 - Sample data, dark mode, responsive layout, keyboard access (Enter opens a card)
+
+## Screenshots
+_Add a screenshot of the board and the insights view here._
 
 ## Run locally
 Open `index.html`, or run `npx serve .`
