@@ -8,6 +8,11 @@ A job application tracker built with vanilla HTML, CSS and JavaScript. No framew
 - **Calendar:** interviews and follow-up dates by month
 - **Insights:** funnel (applied → interview → offer), applications per week, overdue follow-ups, upcoming interviews
 - Add and edit form with notes, salary, job link, and dates
+- Priority, work type and recruiter contact per application
+- One-click "Move to next stage" on cards, undo after delete
+- Filters (priority, overdue only), CSV export, light/dark theme switch
+- Keyboard shortcuts: `n` new, `/` search, `1`-`4` switch views
+- Insight KPIs: response rate, interview rate, average days to interview
 - Stage history recorded on every move
 - Overdue follow-up warnings
 - Search across company, role, location and notes

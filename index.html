@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JobTrail</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,23 +18,26 @@
       <button data-view="cal">Calendar</button>
       <button data-view="insights">Insights</button>
     </nav>
-    <dl class="mini">
-      <div><dt>Active</dt><dd id="sActive">0</dd></div>
-      <div><dt>Interviews</dt><dd id="sIv">0</dd></div>
-      <div><dt>Overdue</dt><dd id="sOd">0</dd></div>
-    </dl>
     <div class="tools">
       <button id="sample">Load sample data</button>
+      <button id="csv">Export CSV</button>
       <button id="export">Export backup</button>
       <button id="import">Import backup</button>
+      <button id="theme">Switch theme</button>
       <button id="clear" class="danger">Clear all</button>
     </div>
   </aside>
   <main>
-    <header class="bar">
-      <input type="search" id="q" placeholder="Search company, role, location or notes" aria-label="Search">
-      <button id="add" class="primary">New application</button>
+    <header class="head">
+      <div><h2 id="pageTitle">Board</h2><p id="pageSub"></p></div>
+      <button id="add" class="primary">+ New application</button>
     </header>
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Search (press /)" aria-label="Search">
+      <select id="fPri" aria-label="Filter by priority"><option value="">All priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      <label class="chk"><input type="checkbox" id="fOd"> Overdue only</label>
+    </div>
+    <div class="stats" id="stats"></div>
     <section id="view" aria-live="polite"></section>
   </main>
 </div>
@@ -52,6 +55,9 @@
       <label>Date applied <input name="applied" type="date"></label>
       <label>Interview date <input name="interview" type="date"></label>
       <label>Follow-up date <input name="followup" type="date"></label>
+      <label>Priority <select name="priority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label>
+      <label>Work type <select name="type"><option value="">Not set</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></label>
+      <label>Contact <input name="contact" maxlength="80" placeholder="Recruiter name or email"></label>
     </div>
     <label>Notes <textarea name="notes" rows="3" maxlength="500" placeholder="Contacts, questions to ask, next steps"></textarea></label>
     <div id="hist" class="hist"></div>
